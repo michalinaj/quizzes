@@ -19,4 +19,3 @@ require 'rails_helper'
       expect(user.errors[:password_confirmation]).to_not be_blank
     end
   end
-end
