@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :quizzes
   validates :username, presence: true
 
-  attr_accessor :user_id, :id
 end
