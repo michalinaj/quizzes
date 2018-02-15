@@ -11,4 +11,6 @@ class Quiz < ApplicationRecord
     create_category(name: new_category_name) unless new_category_name.blank?
   end
 
+  mount_uploader :quiz_picture_photo, ProfilePhotoUploader
+
 end

@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :quizzes
   validates :username, presence: true
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
 end
