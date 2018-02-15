@@ -1,11 +1,13 @@
-class QuizzesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+class Api::V1::QuizzesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    @quizzes = Quiz.all
-    @quizzes = Quiz.all.paginate(page: params[:page], per_page: 4)
-    @categories = Category.all
+    if params[:category_id]
+      category = Category.find(params[:category_id])
+      category_quizzes = category.quizzes
 
+      render json: quizzes, include: [:categories]
+    end
   end
 
   def show
@@ -34,9 +36,10 @@ class QuizzesController < ApplicationController
     end
   end
 
-    private
+  private
 
   def quiz_params
     params.require(:quiz).permit(:name, :description, :category_id, :new_category_name, :quiz_picture)
   end
+
 end

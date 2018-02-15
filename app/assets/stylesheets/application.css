@@ -84,7 +84,8 @@ h3 {
   margin-bottom: 2rem;
   grid-auto-rows: 1fr;
   display: inline-block;
-  float: right;
+  min-width: 50rem;
+  float: left;
   text-align: left;
 }
 
