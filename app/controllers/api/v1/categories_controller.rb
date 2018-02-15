@@ -15,6 +15,7 @@ class Api::V1::CategoriesController < ApplicationController
 
     if stale?(last_modified: @categories.updated_at)
       render json: @categories
+    end
   end
 
 end
