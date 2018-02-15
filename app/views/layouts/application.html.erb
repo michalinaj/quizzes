@@ -18,7 +18,8 @@
 
       <section class="top-bar-section">
         <ul class="right">
-          <%- if current_user -%>
+          <%- if  current_user -%>
+          <li><%= link_to current_user.username, edit_user_registration_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
@@ -31,6 +32,9 @@
 </head>
 
 <body>
+  <% if current_user %>
+    <p> dupa</p>
+    <% end %>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -44,7 +48,5 @@
   <%= yield :extra_footer %>
 
 </body>
-<footer>
 
-</footer>
 </html>
