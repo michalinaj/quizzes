@@ -60,3 +60,4 @@ gem 'webpacker', '~> 3.2'
 gem 'faker'
 gem "will_paginate", "~> 3.0.4"
 gem "carrierwave"
+gem 'mini_magick', '~> 4.8'

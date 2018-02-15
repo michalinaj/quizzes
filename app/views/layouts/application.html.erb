@@ -19,6 +19,7 @@
       <section class="top-bar-section">
         <ul class="right">
           <%- if  current_user -%>
+          <li><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li>
           <li><%= link_to current_user.username, edit_user_registration_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <%- else -%>
