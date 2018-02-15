@@ -1,0 +1,12 @@
+<h2><%= flash[:notice] %></h2>
+<%= link_to "Back", :back %>
+<h2><%= @category.name %></h2>
+
+<b>Quizzes under this category:</b><br />
+<br /><% @category.quizzes.each do |quiz| %>
+  <p>
+    <%= link_to quiz.name, quiz_path(quiz) %>
+  </p>
+  <% end %>
+
+<%= link_to "Back", :back %>

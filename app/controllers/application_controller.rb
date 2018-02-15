@@ -7,19 +7,18 @@ class ApplicationController < ActionController::Base
 
  protected
 
-   # def configure_permitted_parameters
-   #   devise_parameter_sanitizer.permit(:sign_in) do |user_params|
-   #    user_params.permit(:email, :password)
-   #  end
-   #    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-   #     user_params.permit(:username, :email, :password)
-   # end
- # end
-
   def configure_permitted_parameters
     update_attrs = [:password, :password_confirmation, :current_password]
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:account_update, keys: update_attrs)
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:email, :password, :user_id)
+    end
   end
+
+  # def current_user
+  #   return unless session[:user_id]
+  #   @current_user ||= User.find(session[:user_id])
+  # end
 
 end

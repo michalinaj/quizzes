@@ -1,24 +1,120 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
 body {
-  background-color: #FEFDDF;
+  background-color: #424E5A;
+  color: #C1C1B9;
+  margin-bottom: 20px;
+  margin-left: 130px;
+  margin-right: 130px;
+  margin-top: 0px;
+  max-width: 1000px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  width: 1200px;
+}
+
+.quiz-index-page {
+  background-color: #747474;
+}
+
+.quiz-mapping {
+  background-color: #F9F2CA;
 }
 
 .top-bar {
   background-color: #424E5A;
+  color: #C1C1B9;
+  box-shadow: 5px 5px #4E595C;
+}
+
+body, h2, h1 {
+  font-family: Optima, Helvetica, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  color: #DF844B;
+  text-shadow: 1px 1px #C1C1B9;
+}
+
+h3 {
+  text-align: left;
+}
+
+.quiz-card {
+  background-color: #fefefe;
+  margin-bottom: 1.2rem;
+  grid-auto-rows: 1fr;
+  display: inline-block;
+  max-height: 13rem;
+  float: right;
+}
+
+.quiz-card-thumbnail {
+  display: block;
+}
+
+.quiz-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.quiz-card-desc {
+  color: #8a8a8a;
+  display: block;
+  font-size: 1rem;
+}
+
+.title-show{
+  text-align: left;
+}
+
+.quiz-show {
+  background-color: #fefefe;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  grid-auto-rows: 1fr;
+  display: inline-block;
+  float: right;
+  text-align: left;
+}
+
+.pagination-centered{
+  font-family: Optima, Helvetica, sans-serif;
+  padding: 1rem 0rem 2rem 0rem;
+  align: bottom;
+}
+
+.heading {
+  font-weight: bolder;
+  color: #C1C1B9;
+  margin-top: 20px;
+}
+
+.index {
+  padding: 20px;
+  color: #C1C1B9;
+  border: 1px solid bottom #7F7F7F;
+}
+
+.button-warning {
+  background-color: #D69F7C;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.panel {
+  text-align: left;
+  background-color: #747474;
+  margin: 160px;
+  margin-top: 50px;
 }

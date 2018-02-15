@@ -5,10 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 case Rails.env
 when "development"
 
+Category.create!(name: "Languages")
+Category.create!(name: "Trivia")
+Category.create!(name: "Diet")
+Category.create!(name: "Map")
+Category.create!(name: "Coding")
+Category.create!(name: "Books")
+
 if !User.first
-  user = User.create!(email: Faker::Internet.email, password: 'dgfsdfg', username: 'sdfdsg')
+    User.create!(email: Faker::Internet.email, password: "dgfsdfg", username: "Mister")
+end
+
+if !Quiz.first
+  30.times do
+    quiz = Quiz.create!(name: Faker::Lorem.word.capitalize, description: Faker::Lorem.sentences(4).join(' '), category_id: Category.find_by(name: "Books").id, user_id: 5)
+    # quiz_categories = []
+    # (rand(4) + 1).times do
+    #   quiz_categories << Category.order("RANDOM()").first
+    # end
+    # quiz.categories = quiz_categories.uniq
+  end
+end
+
 end
