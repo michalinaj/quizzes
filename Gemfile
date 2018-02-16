@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# group :development, :test do
-#
-# end
+group :development, :test do
+  gem "dotenv-rails"
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -60,4 +60,5 @@ gem 'webpacker', '~> 3.2'
 gem 'faker'
 gem "will_paginate", "~> 3.0.4"
 gem "carrierwave"
+gem 'fog'
 gem 'mini_magick', '~> 4.8'

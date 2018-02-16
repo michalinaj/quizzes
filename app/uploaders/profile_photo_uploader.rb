@@ -4,8 +4,15 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  if Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
+
+  version :thumb do
+  process resize_to_fill: [45,45]
+  end
 
   version :thumb do
   process resize_to_fill: [45,45]
