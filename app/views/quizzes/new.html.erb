@@ -35,16 +35,16 @@
 
   <div class="field">
     <%= f.label :quiz_picture %><br />
-    <%= f.file_field :quiz_picture %>
+    <%= f.file_field :quiz_picture, class: "button secondary" %>
   </div>
-
+  <br />
   <div class="actions">
-    <%= f.submit "Add Questions to this Quiz" %>
+    <%= f.submit "Add Questions to this Quiz", class: "button warning" %>
   </div>
 
   <% end %>
   </br />
 
-  <%= link_to "Back", :back %>
+  <%= link_to "Back", :back, class: "button primary" %>
 
 </div>

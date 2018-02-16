@@ -19,11 +19,7 @@ body {
 }
 
 .quiz-index-page {
-  background-color: #747474;
-}
-
-.quiz-mapping {
-  background-color: #F9F2CA;
+  background-color: #5288B7;
 }
 
 .top-bar {
@@ -39,21 +35,16 @@ body, h2, h1 {
 
 h1 {
   font-size: 6rem;
-  color: #DF844B;
+  color: #555B7C;
   text-shadow: 1px 1px #C1C1B9;
-}
-
-h3 {
-  text-align: left;
 }
 
 .quiz-card {
   background-color: #fefefe;
-  margin-bottom: 1.2rem;
   grid-auto-rows: 1fr;
   display: inline-block;
   max-height: 13rem;
-  float: right;
+  max-width: 28rem;
 }
 
 .quiz-card-thumbnail {
@@ -87,6 +78,7 @@ h3 {
   min-width: 50rem;
   float: left;
   text-align: left;
+  padding: 1rem 5rem 3rem 3rem;
 }
 
 .pagination-centered{

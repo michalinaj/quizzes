@@ -3,6 +3,7 @@
 
 <div class="quiz-index-page">
 
+
   <div class="heading">
     <h1>Quizzes</h1>
   </div>
@@ -14,10 +15,10 @@
       <% end %>
     </div>
     <br />
-    <ul class="button tiny info radius left"><%= link_to "Add New Quiz", new_quiz_path %></ul>
+    <ul class="button secondary"><%= link_to "Add New Quiz", new_quiz_path %></ul>
     <div class="quiz-mapping">
     <% @quizzes.each do |quiz| %>
-    <ul class="quiz-card column small-5">
+    <ul class="quiz-card column-centered small-8">
       <ul class="quiz-card-thumbnail"><%= quiz.quiz_picture %></ul>
       <ul class="quiz-card-title"><%= link_to quiz.name, quiz_path(quiz) %></ul>
       <ul class="quiz-card-desc">Description: <%= quiz.description.truncate_words(12)%></ul>
