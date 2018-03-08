@@ -9,18 +9,20 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from '../react/App'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
+const QuizTitle = props => (
+  <div>You are taking: {props.name}!</div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
   const showQuestionDiv = document.getElementById('show-question');
   // const addQuestionDiv = document.getElementById('add-question');
 
-  // if(showQuestionDiv) {
+  if(showQuestionDiv) {
   ReactDOM.render(
-    <Hello name="React" />,
+    // <QuizTitle name="Quizes Quiz" />,
+    <App />,
     showQuestionDiv
   )
 // } else if(addQuestionDiv) {
@@ -28,5 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //     <OtherContainer />,
 //     addQuestionDiv
 //   )
-// }
+}
 })
