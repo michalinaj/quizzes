@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import QuestionShowTile from "../components/QuestionShowTile"
 
-class QuizShowContainer extends Component {
+class QuestionShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      // answers: ''
+      title: '',
+      answers: ''
     };
   }
 
     componentDidMount() {
-      fetch('/api/v1/quizzes.json')
+      fetch('/api/v1/quizzes')
         .then(response => {
           if (response.ok) {
             return response;
@@ -23,18 +23,19 @@ class QuizShowContainer extends Component {
         })
         .then(response => response.json())
         .then(body => {
-          let quizName = body.quizzes.name;
-          this.setState({ name: quizName });
+          this.setState({ title: body.quizzes[0].name });
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
     render() {
       return(
-      <h2>
-        Your current quiz: {this.state.name}
-      </h2>
+      // <h2>You are taking "{this.state.title}" quiz!</h2>
+      <QuestionShowTile
+        body={this.state.question.body}
+        answers={this.state.question.answers}
+      />
       )
     }
 }
 
-export default QuizShowContainer;
+export default QuestionShowContainer;

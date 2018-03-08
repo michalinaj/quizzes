@@ -11,17 +11,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../react/App'
 
-const QuizTitle = props => (
-  <div>You are taking: {props.name}!</div>
-)
-
 document.addEventListener('DOMContentLoaded', () => {
   const showQuestionDiv = document.getElementById('show-question');
   // const addQuestionDiv = document.getElementById('add-question');
 
   if(showQuestionDiv) {
   ReactDOM.render(
-    // <QuizTitle name="Quizes Quiz" />,
     <App />,
     showQuestionDiv
   )
