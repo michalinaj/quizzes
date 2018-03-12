@@ -23,7 +23,7 @@ class QuizShowContainer extends Component {
         })
         .then(response => response.json())
         .then(body => {
-          let quizName = body.quizzes.name;
+          let quizName = body.quiz.name;
           this.setState({ name: quizName });
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
