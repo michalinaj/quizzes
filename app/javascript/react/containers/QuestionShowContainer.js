@@ -54,14 +54,14 @@ class QuestionShowContainer extends Component {
 
     render() {
       return(
-    <div className="question-card">
+    <div>
       <div className="question-row">
       <QuestionShowTile
         body={this.state.currentQuestion.body}
         answer={this.state.currentQuestion.answers}
       />
       </div>
-      <div>
+      <div className="button-row">
       <NewQuestion nextQuestion={this.updateQuestion}
       />
       </div>
