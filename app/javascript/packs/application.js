@@ -10,20 +10,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../react/App'
+import QuestionAddContainer from '../react/containers/QuestionAddContainer'
 
 document.addEventListener('DOMContentLoaded', () => {
   const showQuestionDiv = document.getElementById('show-question');
-  // const addQuestionDiv = document.getElementById('add-question');
+  const addQuestionDiv = document.getElementById('add-question');
 
   if(showQuestionDiv) {
   ReactDOM.render(
     <App />,
     showQuestionDiv
   )
-// } else if(addQuestionDiv) {
-//   ReactDOM.render(
-//     <OtherContainer />,
-//     addQuestionDiv
-//   )
+} else if(addQuestionDiv) {
+  ReactDOM.render(
+    <QuestionAddContainer />,
+    addQuestionDiv
+  )
 }
 })
