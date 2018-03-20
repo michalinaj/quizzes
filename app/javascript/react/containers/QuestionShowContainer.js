@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import QuestionShowTile from "../components/QuestionShowTile"
+import NewQuestion from "../components/NewQuestion"
 
 class QuestionShowContainer extends Component {
   constructor(props) {
     super(props);
+
+    this.updateQuestion = this.updateQuestion.bind(this);
+
     this.state = {
-      title: '',
-      answers: ''
+      questions: [],
+      currentQuestion: {}
     };
   }
 
-    componentDidMount() {
-      fetch('/api/v1/quizzes')
+    componentWillMount() {
+      fetch('/api/v1/quizzes/{id}/questions.json')
         .then(response => {
           if (response.ok) {
             return response;
@@ -23,17 +27,45 @@ class QuestionShowContainer extends Component {
         })
         .then(response => response.json())
         .then(body => {
-          this.setState({ title: body.quizzes[0].name });
+          const currentQuestions = this.state.questions
+          currentQuestions.push({
+            key: currentQuestions.id,
+            body: currentQuestions.body,
+            answers: currentQuestions.answers
+          })
+          this.setState({
+            questions: currentQuestions,
+            currentQuestion: this.getRandomQuestion(currentQuestions),
+          })
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
+      }
+        getRandomQuestion(currentQuestions) {
+        var question = currentQuestions[Math.floor(Math.random() * currentQuestions.lenght)];
+        return(question);
     }
+
+    updateQuestion(){
+      const currentQuestions = this.state.questions;
+      this.setState({
+        currentQuestion: this.getRandomQuestion(currentQuestions)
+      })
+    }
+
     render() {
       return(
-      // <h2>You are taking "{this.state.title}" quiz!</h2>
+    <div>
+      <div className="question-row">
       <QuestionShowTile
-        body={this.state.question.body}
-        answers={this.state.question.answers}
+        body={this.state.currentQuestion.body}
+        answer={this.state.currentQuestion.answers}
       />
+      </div>
+      <div className="button-row">
+      <NewQuestion nextQuestion={this.updateQuestion}
+      />
+      </div>
+    </div>
       )
     }
 }

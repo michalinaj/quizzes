@@ -111,3 +111,59 @@ h1 {
   margin: 160px;
   margin-top: 50px;
 }
+
+.question-tile {
+  cursor: pointer;
+  height: 400px;
+  width: 400px;
+  perspective: 800px;
+  position: absolute;
+  margin: auto;
+  transition: ease-in;
+}
+
+.question {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  border: 1px solid #300;
+  transform-style: preserve-3d;
+  transition: all 0.2s ease-in-out;
+  font-size: 2.3em;
+}
+
+.question:hover {
+  transform: rotateY(180deg);
+  transition: all 0.1 ease-in-out;
+}
+
+.question .front {
+  height: 400px;
+  width: 400px;
+  backface-visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 30%;
+  background-color: #8a8a8a;
+}
+
+.question .back {
+  height: 400px;
+  width: 400px;
+  text-align: center;
+  padding-top: 30%;
+  transform: rotateY(180deg);
+}
+
+.question-row {
+  margin-top: 10%;
+  padding: 5px;
+}
+
+.button-row {
+  padding: 5px;
+  position: absolute;
+  top: 85%;
+  left: 15%;
+}

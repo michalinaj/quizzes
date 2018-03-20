@@ -2,13 +2,17 @@ import React from 'react';
 
 const QuestionShowTile = (props) => {
   return (
-    <div className="panel question-show">
-      {props.body}
-      {props.answers}
+    <div className="question-tile">
+      <div className="question">
+        <div className="question front">
+          Question
+        </div>
+        <div className="question front back">
+          Answer
+        </div>
+      </div>
     </div>
 
-    // <div className="panel answer-show">
-    // {/* </div> */}
   )
 }
 
