@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import QuestionShowContainer from './containers/QuestionShowContainer'
 
-const App = (props) => {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      action: ''
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <QuestionShowContainer />
+      </div>
+    );
+  }
 }
 
 export default App;

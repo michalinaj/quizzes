@@ -8,7 +8,11 @@
   Category: <%= @quiz.category.name %>
 </p>
 
-<br /><%= link_to "Take this Quiz", :back, class: "button warning right" %><br />
+<br /><%= link_to "Take this Quiz", quiz_question_path(:quiz_id), class: "button warning" %>
+
+<%= link_to "Add Questions to this Quiz", new_quiz_question_path(:quiz_id), class: "button right" %>
 <br />
+
 <%= link_to "Back", :back, class: "button primary" %>
+
 </div>

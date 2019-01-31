@@ -1,4 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
+
   def index
     if params[:quiz_id]
       quiz = Quiz.find(params[:quiz_id])

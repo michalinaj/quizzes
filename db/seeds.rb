@@ -28,6 +28,13 @@ if !Quiz.first
     # end
     # quiz.categories = quiz_categories.uniq
   end
+
+if !Question.first
+  5.times do
+    question = Question.create!(body: Faker::Lorem.word.sentences(1), quiz_id: 2, answers: Lorem.sentences(2).join(' '))
+  end
+end
+
 end
 
 end
