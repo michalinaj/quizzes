@@ -3,17 +3,18 @@
 
 <div class="quiz-index-page">
 
+  <div class="button-group radius even-6">
+    <% @categories.each do |category| %>
+    <li class="button-warning"><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+  </div>
 
   <div class="heading">
     <h1>Quizzes</h1>
   </div>
 
   <h3 class="index">Find and create your quizzes here</h3><br />
-    <div class="button-group radius even-6">
-      <% @categories.each do |category| %>
-      <li class="button-warning"><%= link_to category.name, category_path(category) %></li>
-      <% end %>
-    </div>
+
     <br />
     <ul class="button secondary"><%= link_to "Add New Quiz", new_quiz_path %></ul>
     <div class="quiz-mapping">
