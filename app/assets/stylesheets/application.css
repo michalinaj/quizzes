@@ -28,10 +28,15 @@ body {
   box-shadow: 2px 3px #4E595C;
 }
 
-body, h2, h1 {
+body, h2, h1, h3 {
   font-family: Lato, Helvetica, Raleway;
   text-align: center;
 }
+
+/* h1, h2 {
+  background-image: url(20181227_134213.jpg);
+  background-size: cover;
+} */
 
 h1 {
   font-size: 16rem;
