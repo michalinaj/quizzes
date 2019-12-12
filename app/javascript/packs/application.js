@@ -7,4 +7,24 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from '../react/App'
+import QuestionAddContainer from '../react/containers/QuestionAddContainer'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const showQuestionDiv = document.getElementById('show-question');
+  const addQuestionDiv = document.getElementById('add-question');
+
+  if(showQuestionDiv) {
+  ReactDOM.render(
+    <App />,
+    showQuestionDiv
+  )
+} else if(addQuestionDiv) {
+  ReactDOM.render(
+    <QuestionAddContainer />,
+    addQuestionDiv
+  )
+}
+})

@@ -171,6 +171,6 @@ h1 {
 .button-row {
   padding: 5px;
   position: absolute;
-  top: 100%;
-  left: 85%;
+  top: 85%;
+  left: 15%;
 }
