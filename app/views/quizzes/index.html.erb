@@ -21,13 +21,13 @@
     <% @quizzes.each do |quiz| %>
     <ul class="quiz-card column-centered small-8">
       <ul class="quiz-card-thumbnail"><%= quiz.quiz_picture %></ul>
-      <ul class="quiz-card-title"><%= link_to quiz.name, quiz_path(quiz) %></ul>
+      <ul class="quiz-card-title"><%= link_to quiz.name, quiz_path(quiz.id) %></ul>
       <ul class="quiz-card-desc">Description: <%= quiz.description.truncate_words(12)%></ul>
       <ul class="quiz-card-desc">Category: <%= quiz.category.name %></ul>
     </ul>
     <% end %>
     </div>
-    <!-- <ul class="button small info radius"><%= link_to "Add New Quiz", new_quiz_path %></ul> -->
+    <%= link_to "Add New Quiz", new_quiz_path %>
 </div>
 
 <div class="off-canvas-wrap pagination-centered">

@@ -5,7 +5,6 @@ class QuizzesController < ApplicationController
     @quizzes = Quiz.all
     @quizzes = Quiz.all.paginate(page: params[:page], per_page: 4)
     @categories = Category.all
-
   end
 
   def show
