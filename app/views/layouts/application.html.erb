@@ -20,7 +20,7 @@
   <nav class="main-nav">
     <ul class="main-nav__items">
       <%- if  current_user -%>
-      <li class="main-nav__item"><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li>
+      <!-- <li class="main-nav__item"><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li> -->
       <li class="main-nav__item"><%= link_to current_user.username, edit_user_registration_path %></li>
       <li class="main-nav__item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <%- else -%>
@@ -41,15 +41,16 @@
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
+
+<%= yield :extra_footer %>
+
 </div>
 
 <footer class="main-footer">
   <nav>
     <ul class="main-footer__links">
-      <li class="main-footer__link">
-        <a href="#">michalina@jablonska.me</a>
-      </li>
+      <li class="main-footer__link"><a href="#">michalina@jablonska.me</a></li>
+      <li class="main-footer__link">*Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon">www.flaticon.com</a></li>
     </ul>
   </nav>
 </footer>
