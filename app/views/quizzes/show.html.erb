@@ -1,18 +1,16 @@
 <div class="quiz-show">
-<h2><%= flash[:notice] %></h2>
+  <h2><%= flash[:notice] %></h2>
 
-<p>
-  <h2 class="title-show"><%= @quiz.name %></h2>
-  <%= @quiz.quiz_picture %>
-  Description: <%= @quiz.description %><br/>
-  Category: <%= @quiz.category.name %>
-</p>
+  <span class="quiz-show__info">
+      <h2 class="quiz-card-title__show"><%= @quiz.name %></h2>
+      <p class="quiz-card__desc__show">Description: <%= @quiz.description %></p>
+      <p class="quiz-card__desc__show">Category: <%= @quiz.category.name %></p>
+  </span>
+  <span class="quiz-image__show"><%= image_tag("/images/question.svg", :alt => "quiz") %></span>
 
-<br /><%= link_to "Take this Quiz", quiz_question_path(:quiz_id), class: "button warning" %>
+</div>
 
-<%= link_to "Add Questions to this Quiz", new_quiz_question_path(:quiz_id), class: "button right" %>
-<br />
-
-<%= link_to "Back", :back, class: "button primary" %>
-
+<div class="buttons">
+  <span class="button"><%= link_to "Take this Quiz", quiz_question_path(:quiz_id) %></span>
+  <span class="button"><%= link_to "Add Questions to this Quiz", new_quiz_question_path(:quiz_id) %></span>
 </div>

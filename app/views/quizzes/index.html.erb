@@ -3,33 +3,35 @@
 
 <div class="quiz-index-page">
 
-  <div class="button-group radius even-6">
+  <div class="categories">
     <% @categories.each do |category| %>
-    <li class="button-warning"><%= link_to category.name, category_path(category) %></li>
+    <li class="category-item"><%= link_to category.name, category_path(category) %></li>
     <% end %>
   </div>
 
-  <div class="heading">
-    <h1>Quizzes</h1>
-  </div>
+  <h3 class="subtitle">Find and create your own quizzes</h3><br />
+  <button class="button__add-quiz"><%= link_to "Add New Quiz", new_quiz_path %></button>
 
-  <h3 class="index">Find and create your own quizzes</h3><br />
-
-    <br />
-    <ul class="button secondary"><%= link_to "Add New Quiz", new_quiz_path %></ul>
     <div class="quiz-mapping">
+
     <% @quizzes.each do |quiz| %>
-    <ul class="quiz-card column-centered small-8">
-      <ul class="quiz-card-thumbnail"><%= quiz.quiz_picture %></ul>
-      <ul class="quiz-card-title"><%= link_to quiz.name, quiz_path(quiz.id) %></ul>
-      <ul class="quiz-card-desc">Description: <%= quiz.description.truncate_words(12)%></ul>
-      <ul class="quiz-card-desc">Category: <%= quiz.category.name %></ul>
-    </ul>
+      <ul class="quiz-card">
+
+        <div class="quiz-image__index">
+          <%= image_tag("/images/question.svg", :alt => "quiz") %>
+        </div>
+        <div class="quiz-card__info">
+          <ul class="quiz-card__title"><%= link_to quiz.name, quiz_path(quiz.id) %></ul>
+          <ul class="quiz-card__desc">Description: <%= quiz.description.truncate_words(12)%></ul>
+          <ul class="quiz-card__desc">Category: <%= quiz.category.name %></ul>
+        </div>
+      </ul>
     <% end %>
+
     </div>
-    <%= link_to "Add New Quiz", new_quiz_path %>
+    <button class="button__add-quiz"><%= link_to "Add New Quiz", new_quiz_path %></button>
 </div>
 
-<div class="off-canvas-wrap pagination-centered">
+<div class="pagination">
   <%= will_paginate @quizzes %>
 </div>

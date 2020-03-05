@@ -8,35 +8,30 @@
     <%= javascript_include_tag "vendor/modernizr" %>
 
   <%= csrf_meta_tags %>
-  <div class="fixed">
-    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Quizzes</a></h1>
-        </li>
-      </ul>
-
-      <section class="top-bar-section">
-        <ul class="right">
-          <%- if  current_user -%>
-          <li><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li>
-          <li><%= link_to current_user.username, edit_user_registration_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <%- end -%>
-        </ul>
-      </section>
-    </nav>
-  </div>
-
   <%= javascript_pack_tag 'application' %>
-  
+
 </head>
 
 <body>
+<header class="main-header">
+  <div class="main-header__logo">
+    <a href="/">.Quizzes</a>
+  </div>
+  <nav class="main-nav">
+    <ul class="main-nav__items">
+      <%- if  current_user -%>
+      <!-- <li class="main-nav__item"><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li> -->
+      <li class="main-nav__item"><%= link_to current_user.username, edit_user_registration_path %></li>
+      <li class="main-nav__item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <%- else -%>
+      <li class="main-nav__item"><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <li class="main-nav__item"><%= link_to 'Sign In', new_user_session_path %></li>
+      <%- end -%>
+    </ul>
+  </nav>
+</header>
 
+<div class="flash">
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
@@ -46,7 +41,19 @@
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
+
+<%= yield :extra_footer %>
+
+</div>
+
+<footer class="main-footer">
+  <nav>
+    <ul class="main-footer__links">
+      <li class="main-footer__link"><a href="#">michalina@jablonska.me</a></li>
+      <li class="main-footer__link">*Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon">www.flaticon.com</a></li>
+    </ul>
+  </nav>
+</footer>
 
 </body>
 
