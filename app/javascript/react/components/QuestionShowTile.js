@@ -1,18 +1,18 @@
 import React from 'react';
 
-const QuestionShowTile = (props) => {
+const QuestionShowTile = props => {
+
   return (
     <div className="question-tile">
       <div className="question">
         <div className="question front">
-          Question
+          {props.question}
         </div>
         <div className="question front back">
           Answer
         </div>
       </div>
     </div>
-
   )
 }
 

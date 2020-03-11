@@ -31,7 +31,7 @@ if !Quiz.first
 
 if !Question.first
   5.times do
-    question = Question.create!(body: Faker::Lorem.word.sentences(1), quiz_id: 2, answers: Lorem.sentences(2).join(' '))
+    question = Question.create!(body: Faker::Lorem.word.sentences(1), quiz_id: 1, answers: Lorem.sentences(2).join(' '))
   end
 end
 

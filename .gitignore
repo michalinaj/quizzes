@@ -26,3 +26,8 @@ yarn-error.log*
 /coverage
 .env
 /public/uploads
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

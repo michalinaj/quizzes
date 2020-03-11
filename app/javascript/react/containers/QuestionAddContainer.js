@@ -4,13 +4,19 @@ class QuestionAddContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
     }
   }
+
   render() {
     return(
       <div>
-        THIS
+        <h1>THIS</h1>
+        <h1>THIS</h1>
+        <h1>THIS</h1>
+        <h1>THIS</h1>
+        <h1>THIS</h1>
+        <h1>THIS</h1>
+        <h1>THIS</h1>
       </div>
     )
   }

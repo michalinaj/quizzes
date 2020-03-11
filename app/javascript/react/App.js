@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import QuestionShowContainer from './containers/QuestionShowContainer'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      action: ''
+      // action: ''
     };
   }
 
@@ -13,6 +12,7 @@ class App extends Component {
     return (
       <div>
         <QuestionShowContainer />
+        <QuestionAddContainer />
       </div>
     );
   }

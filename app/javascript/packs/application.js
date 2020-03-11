@@ -11,6 +11,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../react/App'
 import QuestionAddContainer from '../react/containers/QuestionAddContainer'
+import QuestionShowContainer from '../react/containers/QuestionShowContainer'
 
 document.addEventListener('DOMContentLoaded', () => {
   const showQuestionDiv = document.getElementById('show-question');
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(showQuestionDiv) {
   ReactDOM.render(
-    <App />,
+    <QuestionShowContainer />,
     showQuestionDiv
   )
 } else if(addQuestionDiv) {
