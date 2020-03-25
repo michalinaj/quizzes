@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NewQuestionTile from "../components/NewQuestionTile";
 
 class QuestionAddContainer extends Component {
   constructor(props) {
@@ -10,13 +11,7 @@ class QuestionAddContainer extends Component {
   render() {
     return(
       <div>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
-        <h1>THIS</h1>
+        <NewQuestionTile />
       </div>
     )
   }

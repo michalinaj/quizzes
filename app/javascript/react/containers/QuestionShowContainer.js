@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import QuestionShowTile from "../components/QuestionShowTile"
-import NewQuestion from "../components/NewQuestion"
 
 class QuestionShowContainer extends Component {
   constructor(props) {

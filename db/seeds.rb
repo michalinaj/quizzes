@@ -22,18 +22,16 @@ end
 if !Quiz.first
   30.times do
     quiz = Quiz.create!(name: Faker::Lorem.word.capitalize, description: Faker::Lorem.sentences(4).join(' '), category_id: Category.find_by(name: "Books").id, user_id: 5)
-    # quiz_categories = []
-    # (rand(4) + 1).times do
-    #   quiz_categories << Category.order("RANDOM()").first
-    # end
-    # quiz.categories = quiz_categories.uniq
   end
 
-if !Question.first
-  5.times do
-    question = Question.create!(body: Faker::Lorem.word.sentences(1), quiz_id: 1, answers: Lorem.sentences(2).join(' '))
-  end
-end
+questions = Question.create(
+  [
+    { quiz_id: 1,
+      body: "What is the meaning of life?",
+      answers: "no clue"
+    }
+  ]
+)
 
 end
 

@@ -256,20 +256,13 @@ body {
 
 //take the quiz
 
-.panel {
-  text-align: left;
-  background-color: #747474;
-  margin: 160px;
-  margin-top: 50px;
-}
-
 .question-tile {
   cursor: pointer;
-  height: 400px;
+  height: 300px;
   width: 400px;
   perspective: 800px;
-  position: absolute;
   margin: auto;
+  margin-top: 5rem;
   transition: all 1s ease-in-out;
 }
 
@@ -280,9 +273,9 @@ body {
   border: 1px solid #300;
   transform-style: preserve-3d;
   transition: ease-in-out;
-  font-size: 2.3em;
+  font-size: 2.3rem;
   border-radius: 10px;
-  background-color: #8a8a8a;
+  background-color: #EBEBEB;
 }
 
 .question:hover {
@@ -297,14 +290,14 @@ body {
   transition: all 2s ease-in-out;
   overflow: hidden;
   text-align: center;
-  padding-top: 30%;
-  background-color: #8a8a8a;
+  padding: 25% 0 3% 3%;
+  background-color: #EBEBEB;
 }
 
 .question .back {
   position: relative;
   text-align: center;
-  padding-top: 30%;
+  padding: 25% 0 3% 3%;
   transform: rotateY(180deg);
 }
 
