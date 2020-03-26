@@ -29,7 +29,48 @@ questions = Question.create(
     { quiz_id: 1,
       body: "What is the meaning of life?",
       answers: "no clue"
+    },
+
+    { quiz_id: 2,
+      body: "How many hearts does an octopus have?",
+      answers: "Three"
+    },
+
+    { quiz_id: 3,
+      body: "Which bone are babies born without?",
+      answers: "Knee cap"
+    },
+
+    { quiz_id: 4,
+      body: "Which country produces the most coffee in the world?",
+      answers: "Brazil"
+    },
+
+    { quiz_id: 5,
+      body: "What does BMW stand for (in English)?",
+      answers: "Bavarian Motor Works"
+    },
+
+    { quiz_id: 6,
+      body: "Which planet is the hottest in the solar system?",
+      answers: "Venus"
+    },
+
+    { quiz_id: 7,
+      body: "Which is the only American state to begin with the letter 'p'?",
+      answers: "Pennsylvania"
+    },
+
+    { quiz_id: 8,
+      body: "Which actress has won the most Oscars?",
+      answers: "Katharine Hepburn"
+    },
+
+    { quiz_id: 9,
+      body: "Name the three primary colours",
+      answers: "Red, yellow and blue"
     }
+
   ]
 )
 
