@@ -1,7 +1,8 @@
 class Api::V1::QuestionsController < ApplicationController
 
   def show
-    @quiz = Quiz.find(params[:quiz_id])
+    # @question = Question.find(params[:id])
+    # @quiz = Quiz.find(params[:quiz_id])
     render json: { question: Question.find(params[:id]) }
   end
 
