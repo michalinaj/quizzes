@@ -6,9 +6,13 @@ class QuestionShowContainer extends Component {
     super(props);
     this.state = {
       question: "",
-      answers: []
+      newQuestion: "",
+      answers: [],
+      newAnswers: []
     }
     this.handleClick = this.handleClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   getFortune() {
@@ -45,6 +49,42 @@ class QuestionShowContainer extends Component {
     this.getFortune()
       }
 
+  handleChange(event) {
+    this.setState({ newQuestion: event.target.value })
+  }
+
+  handleSubmit(event) {
+    let quiz_id =window.location.href.match(/quizzes\/\d+/);
+    quiz_id = quiz_id[0].match(/\d+/);
+    event.preventDefault()
+    let formPayload = {
+      qestion: this.state.newQuestion
+    }
+    fetch('/api/v1/question/', {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage)
+          throw error
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ question: body.question.text, newQuestion: "" })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
     render() {
       return(
         <div className="question__show-tile">
@@ -53,6 +93,17 @@ class QuestionShowContainer extends Component {
             answers = {this.state.answers}
           />
         <button className="button__play-quiz" onClick={this.handleClick}> Try another Question </button>
+
+        <form onSubmit={this.handleSubmit}>
+          <label>New Question:</label>
+          <input
+            type="text"
+            value={this.state.newQuestion}
+            onChange={this.handleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+
         </div>
       )
     }
