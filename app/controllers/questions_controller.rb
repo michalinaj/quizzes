@@ -5,4 +5,10 @@ class QuestionsController < ApplicationController
 
   def show
   end
+
+  def new
+  end
+
+  def play
+  end
 end

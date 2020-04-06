@@ -23,57 +23,56 @@ if !Quiz.first
   30.times do
     quiz = Quiz.create!(name: Faker::Lorem.word.capitalize, description: Faker::Lorem.sentences(4).join(' '), category_id: Category.find_by(name: "Books").id, user_id: 5)
   end
+end
 
-questions = Question.create(
+questions = Question.create!(
   [
     { quiz_id: 1,
       body: "What is the meaning of life?",
       answers: "no clue"
     },
 
-    { quiz_id: 2,
+    { quiz_id: 1,
       body: "How many hearts does an octopus have?",
       answers: "Three"
     },
 
-    { quiz_id: 3,
+    { quiz_id: 1,
       body: "Which bone are babies born without?",
       answers: "Knee cap"
     },
 
-    { quiz_id: 4,
+    { quiz_id: 1,
       body: "Which country produces the most coffee in the world?",
       answers: "Brazil"
     },
 
-    { quiz_id: 5,
+    { quiz_id: 1,
       body: "What does BMW stand for (in English)?",
       answers: "Bavarian Motor Works"
     },
 
-    { quiz_id: 6,
+    { quiz_id: 1,
       body: "Which planet is the hottest in the solar system?",
       answers: "Venus"
     },
 
-    { quiz_id: 7,
+    { quiz_id: 1,
       body: "Which is the only American state to begin with the letter 'p'?",
       answers: "Pennsylvania"
     },
 
-    { quiz_id: 8,
+    { quiz_id: 1,
       body: "Which actress has won the most Oscars?",
       answers: "Katharine Hepburn"
     },
 
-    { quiz_id: 9,
+    { quiz_id: 1,
       body: "Name the three primary colours",
       answers: "Red, yellow and blue"
     }
 
   ]
 )
-
-end
 
 end

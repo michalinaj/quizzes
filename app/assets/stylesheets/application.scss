@@ -210,7 +210,8 @@ body {
 }
 
 .quiz-image__show img {
-  width: 100%
+  width: 100%;
+  margin-bottom: 0.2rem;
 }
 
 .quiz-show__info {
@@ -256,6 +257,13 @@ body {
 
 //take the quiz
 
+.intro {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8a8a8a;
+}
+
 .question__show-tile {
   display: flex;
   flex-direction: column;
@@ -268,7 +276,7 @@ body {
   width: 400px;
   perspective: 800px;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   margin-bottom: 2rem;
   transition: all 2s ease-in-out;
 }
