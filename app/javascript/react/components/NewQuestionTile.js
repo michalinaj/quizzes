@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewQuestionList from "../components/NewQuestionList";
+
 import Question from '../images/question.svg';
 
 class NewQuestionTile extends Component {
@@ -9,7 +9,8 @@ class NewQuestionTile extends Component {
       newQuestion: {
              body: [],
              answers: []
-           }
+           },
+           visible: false
          }
 
     this.handleBodyChange = this.handleBodyChange.bind(this)
@@ -22,28 +23,31 @@ class NewQuestionTile extends Component {
       body : event.target.value,
       answers : this.state.newQuestion.answers
     }
-    this.setState({
-        newQuestion: questionTemp
-    })
+    this.setState(
+      { newQuestion: questionTemp,
+        visible: false }
+    )
   }
-    handleAnswersChange(event) {
+  handleAnswersChange(event) {
       let questionTemp = {
         answers : event.target.value,
         body : this.state.newQuestion.body
       }
-      this.setState({
-          newQuestion: questionTemp
-      })
+      this.setState(
+        { newQuestion: questionTemp,
+          visible: false }
+      )
     }
 
   handleSubmit(event) {
-    alert("New Question was submitted")
     event.preventDefault();
     let formPayload = {
       question: this.state.newQuestion
     }
 
     let quizId = window.location.pathname.match(/quizzes\/\d+/g)[0].match(/\d+/g);
+
+
 
     fetch(`/api/v2/quizzes/${quizId}/questions`, {
       //credentials: "same-origin",
@@ -65,43 +69,41 @@ class NewQuestionTile extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ question: body.question, newQuestion: [] })
+        this.setState({ newQuestion: {
+                          body: '',
+                          answers: ''
+                        },
+                         visible: true
+           });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }
 
   render() {
 
-
-
     return(
       <div className="panel">
       <img className="quiz-image__show" src={Question} />
+
+      <h3 className={this.state.visible?'fadeIn':'fadeOut' } >Thank you for submitting your question! </h3>
 
       <form onSubmit={this.handleSubmit}>
         <label>New Question:</label>
         <input className="field"
           type="text"
           name="body"
-          //value={this.state.newQuestion.body}
+          value={this.state.newQuestion.body}
           onChange={this.handleBodyChange}
         />
         <label>Answer:</label>
         <input className="field"
           type="text"
           name="answers"
-          //value={this.state.newQuestion.answers}
+          value={this.state.newQuestion.answers}
           onChange={this.handleAnswersChange}
         />
         <input className="button" type="submit" value="Submit" />
       </form>
-
-      <br />
-      <span>Your Added Questions:</span>
-        <NewQuestionList
-          newItem={this.state.newQuestion.body}
-          newAns={this.state.newQuestion.answers}
-        />
 
       </div>
 
