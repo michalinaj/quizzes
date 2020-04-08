@@ -74,5 +74,3 @@ questions = Question.create!(
 
   ]
 )
-
-end
