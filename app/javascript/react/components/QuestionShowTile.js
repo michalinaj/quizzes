@@ -1,15 +1,17 @@
 import React from 'react';
 
-const QuestionShowTile = props => {
+const QuestionShowTile = (props) => {
+  const question = props.question
+  const answers = props.answers
 
-  return (
+  return(
     <div className="question-tile">
       <div className="question">
         <div className="question front">
-          {props.question}
+          {question}
         </div>
         <div className="question front back">
-          Answer
+          {answers}
         </div>
       </div>
     </div>

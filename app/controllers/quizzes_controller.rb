@@ -15,6 +15,9 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.new
   end
 
+  def play
+  end
+
   def create
     @quiz = Quiz.new(quiz_params)
     @quiz[:user_id] = current_user[:id]

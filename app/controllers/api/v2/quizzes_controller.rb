@@ -1,4 +1,4 @@
-class Api::V1::QuizzesController < ApplicationController
+class Api::V2::QuizzesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def show

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'quizzes#index'
   devise_for :users
-  resources :quizzes, only: [:index, :show, :create, :new] do
-    resources :questions, only: [:new, :create, :show]
-    end
+  resources :quizzes, only: [:index, :show, :create, :new, :play] do
+    resources :questions, only: [:new, :create, :show, :index]
+  end
   resources :categories, only: [:new, :create, :show]
 
   namespace :api do
@@ -17,8 +17,13 @@ Rails.application.routes.draw do
         end
       resources :quizzes, only: [:create]
     end
+    namespace :v2 do
+      resources :quizzes, only: [:index, :show, :create, :new] do
+      resources :questions, only: [:index, :show, :create, :new]
+      end
+    end
+
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
 # get '*path', to: 'static_views#index'

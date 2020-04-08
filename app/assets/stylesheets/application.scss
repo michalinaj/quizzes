@@ -210,7 +210,8 @@ body {
 }
 
 .quiz-image__show img {
-  width: 100%
+  width: 100%;
+  margin-bottom: 0.2rem;
 }
 
 .quiz-show__info {
@@ -256,33 +257,42 @@ body {
 
 //take the quiz
 
-.panel {
-  text-align: left;
-  background-color: #747474;
-  margin: 160px;
-  margin-top: 50px;
+.intro {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8a8a8a;
+}
+
+.question__show-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .question-tile {
   cursor: pointer;
-  height: 400px;
+  height: 300px;
   width: 400px;
   perspective: 800px;
-  position: absolute;
   margin: auto;
-  transition: all 1s ease-in-out;
+  margin-top: 3.5rem;
+  margin-bottom: 2rem;
+  transition: all 2s ease-in-out;
 }
 
 .question {
   height: 100%;
   width: 100%;
   position: absolute;
-  border: 1px solid #300;
+  border: 1px solid #EBEBEB;
   transform-style: preserve-3d;
   transition: ease-in-out;
-  font-size: 2.3em;
+  color: #8a8a8a;
+  font-size: 2rem;
   border-radius: 10px;
-  background-color: #8a8a8a;
+  background-color: white;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.3);
 }
 
 .question:hover {
@@ -297,15 +307,52 @@ body {
   transition: all 2s ease-in-out;
   overflow: hidden;
   text-align: center;
-  padding-top: 30%;
-  background-color: #8a8a8a;
+  padding: 25% 0 3% 3%;
+  background-color: white;
 }
 
 .question .back {
   position: relative;
   text-align: center;
-  padding-top: 30%;
+  padding: 25% 0 3% 3%;
   transform: rotateY(180deg);
+}
+
+.button__play-quiz {
+  // top: 7rem;
+  // right: 2.5rem;
+  margin: auto;
+  font: inherit;
+  padding: 0.3rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: transparent;
+  background: white;
+  background-image: linear-gradient(to left, blue, green, orange, red); -webkit-background-clip: text;
+  border: 1.5px solid #8a8a8a;
+}
+
+.button__play-quiz:hover,
+.button__play-quiz:active {
+  background: #EBEBEB;
+  border: 1.5px solid #EBEBEB;
+  color: #8a8a8a;
+}
+
+.button__play-quiz a {
+  color: #EBEBEB;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button__play-quiz a:hover,
+.button__play-quiz a:active {
+  color: #747474;
+}
+
+.button__play-quiz:focus {
+  outline: none;
 }
 
 .question-row {
@@ -398,4 +445,15 @@ input.button {
 .main-footer__link a {
   color: #EBEBEB;
   text-decoration: none;
+}
+
+.fadeOut{
+    color: red;
+     opacity:0;
+     transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn{
+    color: red;
+     opacity:1;
+     transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
 }
