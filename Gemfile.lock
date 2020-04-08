@@ -483,6 +483,7 @@ DEPENDENCIES
   factory_bot
   faker
   fog
+  fog-vsphere
   foundation-rails (~> 5.0)
   jbuilder (~> 2.5)
   jquery-rails
