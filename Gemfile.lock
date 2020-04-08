@@ -245,6 +245,9 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
+    fog-vsphere (3.3.0)
+      fog-core
+      rbvmomi (>= 1.9, < 3)
     fog-xenserver (1.0.0)
       fog-core
       fog-xml
@@ -480,7 +483,6 @@ DEPENDENCIES
   factory_bot
   faker
   fog
-  fog-vsphere
   foundation-rails (~> 5.0)
   jbuilder (~> 2.5)
   jquery-rails

@@ -61,5 +61,4 @@ gem 'faker'
 gem "will_paginate", "~> 3.0.4"
 gem "carrierwave"
 gem 'fog'
-gem 'fog-vsphere'
 gem 'mini_magick', '~> 4.8'
