@@ -16,8 +16,6 @@
 # Category.create!(name: "Books")
 # Category.create!(name: "Other")
 
-Category.destroy(name: "Books")
-
 # if !User.first
 #     User.create!(email: Faker::Internet.email, password: "dgfsdfg", username: "Mister")
 # end
