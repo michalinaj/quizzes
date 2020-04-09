@@ -7,13 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #case Rails.env
 #when "development"
+#
+# Category.create!(name: "Languages")
+# Category.create!(name: "Trivia")
+# Category.create!(name: "Diet")
+# Category.create!(name: "Map")
+# Category.create!(name: "Coding")
+# Category.create!(name: "Books")
+# Category.create!(name: "Other")
 
-Category.create!(name: "Languages")
-Category.create!(name: "Trivia")
-Category.create!(name: "Diet")
-Category.create!(name: "Map")
-Category.create!(name: "Coding")
-Category.create!(name: "Books")
+Category.destroy(name: "Books")
 
 # if !User.first
 #     User.create!(email: Faker::Internet.email, password: "dgfsdfg", username: "Mister")

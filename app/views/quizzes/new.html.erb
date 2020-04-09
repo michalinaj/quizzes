@@ -21,13 +21,13 @@
 
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <div class="textarea"><%= f.text_area :description, size: "42x5" %></div>
   </div>
 
   <p>
   <label for="index_quizzes_on_category_id">Category:</label><br />
     <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select a Category" %>
-    or create one:
+    <p><%= "or create one:" %></p>
     <%= f.text_field :new_category_name %>
   </p>
 

@@ -55,9 +55,9 @@ body {
   padding: 3rem;
 }
 
-.notice {
+.flash-message {
   color: orange;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 //category panel
@@ -419,6 +419,14 @@ input.button {
 
 .field {
   margin-bottom: 1rem;
+}
+
+#quiz_description {
+  font-size: 1rem;
+}
+
+#quiz_category_id {
+  font-size: 1rem;
 }
 
 //footer
