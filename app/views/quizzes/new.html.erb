@@ -27,8 +27,6 @@
   <p>
   <label for="index_quizzes_on_category_id">Category:</label><br />
     <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select a Category" %>
-    <p><%= "or create one:" %></p>
-    <%= f.text_field :new_category_name %>
   </p>
 
   <br />

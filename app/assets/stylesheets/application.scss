@@ -294,7 +294,7 @@ body {
   transform-style: preserve-3d;
   transition: ease-in-out;
   color: #8a8a8a;
-  font-size: 2rem;
+  font-size: 1.6rem;
   border-radius: 10px;
   background-color: white;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.3);
@@ -375,6 +375,7 @@ body {
 .pagination {
   position: relative;
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 .pagination a {
@@ -412,9 +413,12 @@ body {
   font-size: 1rem;
 }
 
-input.button {
+input.update {
   width: auto;
   margin: auto;
+  background: white;
+  border: 1.5px solid #EBEBEB;
+  color: #8a8a8a;
 }
 
 .field {
@@ -423,6 +427,7 @@ input.button {
 
 #quiz_description {
   font-size: 1rem;
+  border: 1.5px solid #C1C1B9;
 }
 
 #quiz_category_id {

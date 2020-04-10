@@ -30,8 +30,7 @@
 
     </div>
     <button class="button__add-quiz"><%= link_to "Add New Quiz", new_quiz_path %></button>
-</div>
-
-<div class="pagination">
-  <%= will_paginate @quizzes %>
+    <div class="pagination">
+      <%= will_paginate @quizzes %>
+    </div>
 </div>
