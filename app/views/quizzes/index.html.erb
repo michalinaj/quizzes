@@ -5,12 +5,12 @@
 
   <div class="categories">
     <% @categories.each do |category| %>
-    <li class="category-item"><%= link_to category.name, category_path(category) %></li>
+    <li class="category-item"><%= link_to category.name.upcase, category_path(category) %></li>
     <% end %>
   </div>
 
   <h3 class="subtitle">Find and create your own flashcards</h3><br />
-  <button class="button__add-quiz"><%= link_to "Add New Quiz", new_quiz_path %></button>
+  <div class="right-side"><span class="button"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span></div>
 
     <div class="quiz-mapping">
 
@@ -21,15 +21,15 @@
           <%= image_tag("/images/question.svg", :alt => "quiz") %>
         </div>
         <div class="quiz-card__info">
-          <ul class="quiz-card__title"><%= link_to quiz.name, quiz_path(quiz.id) %></ul>
-          <ul class="quiz-card__desc">Description: <%= quiz.description.truncate_words(12)%></ul>
-          <ul class="quiz-card__desc">Category: <%= quiz.category.name %></ul>
+          <p class="quiz-card__title"><%= link_to quiz.name.upcase, quiz_path(quiz.id) %></p>
+          <span class="quiz-card__cat">Category: <%= quiz.category.name %></span>
+          <p class="quiz-card__desc"><%= quiz.description%></p>
         </div>
       </ul>
     <% end %>
 
-    </div>
-    <button class="button__add-quiz"><%= link_to "Add New Quiz", new_quiz_path %></button>
+    </div></br>
+    <span class="button"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span>
     <div class="pagination">
       <%= will_paginate @quizzes %>
     </div>
