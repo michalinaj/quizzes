@@ -36,7 +36,6 @@ main {
   background: #FFFFFF;
   padding: 0.5rem 1rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
@@ -80,7 +79,7 @@ main {
   top: 2.5rem;
   padding: 0 1rem;
   left: 0;
-  display: flex;
+  display: none;
   align-items: center;
   flex-direction: row;
   background-color: white;
@@ -105,28 +104,28 @@ main {
   justify-content: center;
 }
 
-.subtitle {
-  // margin-top:4rem;
+@media (min-width: 40rem) {
+  .categories {
   display: flex;
-  justify-content: center;
+  }
+}
+
+.subtitle {
+  text-align: center;
   padding: 1.5rem 0;
-  width: 100%;
   background: #49bdaa;
   color: #FFFFFF;
 }
 
-//quiz-index
-
-.quiz-index-page {
+@media (min-width: 40rem) {
 
 }
 
+//quiz-index
+
 .quiz-mapping {
-  display: grid;
-  grid-area: main;
-  grid-template-columns: repeat(3, 15rem);
-  grid-template-rows: repeat(4, 22rem);
-  grid-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   grid-auto-flow: row dense;
 }
@@ -141,7 +140,7 @@ main {
 }
 
 .quiz-image__index {
-  padding: 0.8rem;
+  padding: 2rem;
 }
 
 .quiz-image__index img {
@@ -192,6 +191,44 @@ main {
   font-weight: bold;
 }
 
+@media (min-width: 40rem) {
+  .quiz-mapping {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: repeat(3, 15rem);
+    grid-template-rows: repeat(4, 22rem);
+    grid-gap: 1.5rem;
+  }
+  .quiz-image__index img {
+    width: 70%;
+  }
+
+  .quiz-image__index {
+    padding: 0.8rem;
+  }
+}
+
+@media (min-width: 63rem) {
+  .quiz-mapping {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: repeat(4, 15rem);
+    grid-template-rows: repeat(3, 22rem);
+    grid-gap: 1.5rem;
+  }
+  
+  @media (min-width: 90rem) {
+    .quiz-mapping {
+      display: grid;
+      grid-area: main;
+      grid-template-columns: repeat(6, 15rem);
+      grid-template-rows: repeat(2, 22rem);
+      grid-gap: 1.5rem;
+    }
+  }
+  
+}
+
 // quiz-image__show
 
 .quiz-show {
@@ -233,7 +270,7 @@ main {
 
 .buttons {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0.5rem 0;
   margin: auto;
 }
@@ -243,12 +280,13 @@ main {
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.5rem;
+  margin-bottom: 10px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .button-left {
-  margin-left: 50px;
+  margin-left: 0;
 }
 
 .button-right {
@@ -270,6 +308,16 @@ main {
 .right-side {
   position: relative;
   margin: auto;
+}
+
+@media (min-width: 40rem) {
+  .buttons {
+  flex-direction: row;
+  }
+
+  .button-left {
+    margin-left: 50px;
+  }
 }
 
 //take the quiz
@@ -412,11 +460,17 @@ main {
 
 //forms
 
+.form__new {
+  display: grid;
+  grid-auto-rows: 2rem;
+  grid-row-gap: 1rem;
+}
+
 .panel {
   text-align: center;
   align-items: center;
   margin: auto;
-  width: 25rem;
+  width: 20rem;
 }
 
 .panel label {
@@ -429,6 +483,10 @@ main {
   width: 100%;
   text-align: center;
   font-size: 1rem;
+}
+
+.panel input {
+  border: none;
 }
 
 .field {

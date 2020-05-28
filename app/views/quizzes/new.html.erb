@@ -14,26 +14,29 @@
 
   <%= form_for @quiz do |f| %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form__new">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <div class="textarea"><%= f.text_area :description, size: "42x5" %></div>
+    </div>
+
+    <br />
+    <p>
+    <label for="index_quizzes_on_category_id">Category:</label>
+      <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select a Category" %>
+    </p>
+
+    <br />
+    <div class="actions">
+      <%= f.submit "Add Questions to this Quiz" %>
+    </div>
+
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <div class="textarea"><%= f.text_area :description, size: "42x5" %></div>
-  </div>
-
-  <p>
-  <label for="index_quizzes_on_category_id">Category:</label><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select a Category" %>
-  </p>
-
-  <br />
-  <div class="actions" id="add-Questions">
-    <%= f.submit "Add Questions to this Quiz", class: "button warning" %>
-  </div>
-
-  <% end %>
-
 </div>
