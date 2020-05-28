@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quizzes</title>
+  <title>Quizzess</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -17,41 +17,42 @@
     <a href="/">.Quizzes</a>
   </div>
   <nav class="main-nav">
-    <ul class="main-nav__items">
+  <ul class="main-nav__items">
       <%- if  current_user -%>
       <!-- <li class="main-nav__item"><%= image_tag current_user.profile_photo.thumb if current_user.profile_photo.thumb.present? %></li> -->
       <li class="main-nav__item"><%= link_to current_user.username, edit_user_registration_path %></li>
       <li class="main-nav__item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <%- else -%>
-      <li class="main-nav__item"><%= link_to 'Sign Up', new_user_registration_path %></li>
       <li class="main-nav__item"><%= link_to 'Sign In', new_user_session_path %></li>
       <%- end -%>
-    </ul>
+  </ul>
   </nav>
 </header>
 
-<div class="flash">
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
-  <%= yield %>
-  <%= javascript_include_tag 'application' %>
+<main>
+  <div class="flash">
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
+  </div>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
 
-<%= yield :extra_footer %>
-
-</div>
+  <%= yield :extra_footer %>
+</main>
 
 <footer class="main-footer">
   <nav>
     <ul class="main-footer__links">
       <li class="main-footer__link"><a href="#">michalina@jablonska.me</a></li>
-      <li class="main-footer__link">*Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon">www.flaticon.com</a></li>
-    </ul>
-  </nav>
-</footer>
-
-</body>
-
-</html>
+      <%-# *Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon">www.flaticon.com</a></li> -%>
+      </ul>
+      </nav>
+      </footer>
+      
+      </body>
+      
+      </html>
+      

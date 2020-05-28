@@ -3,7 +3,7 @@ class QuizzesController < ApplicationController
 
   def index
     @quizzes = Quiz.all
-    @quizzes = Quiz.all.paginate(page: params[:page], per_page: 6)
+    @quizzes = Quiz.all.paginate(page: params[:page], per_page: 12)
     @categories = Category.all
   end
 
