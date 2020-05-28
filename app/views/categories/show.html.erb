@@ -4,19 +4,21 @@
 <h2 class="category-title"><%= @category.name %></h2>
 
 <b class="category-title">Quizzes under this category:</b><br />
-<br /><% @category.quizzes.each do |quiz| %>
-  <ul class="quiz-card">
+<div class="quiz-mapping">
+  <% @category.quizzes.each do |quiz| %>
+      <ul class="quiz-card">
 
-    <div class="quiz-image__index">
-      <%= image_tag("/images/question.svg", :alt => "quiz") %>
-    </div>
-    <div class="quiz-card__info">
-      <ul class="quiz-card__title"><%= link_to quiz.name, quiz_path(quiz.id) %></ul>
-      <ul class="quiz-card__desc">Description: <%= quiz.description.truncate_words(12)%></ul>
-      <ul class="quiz-card__desc">Category: <%= quiz.category.name %></ul>
-    </div>
-  </ul>
-  <% end %>
+        <div class="quiz-image__index">
+          <%= image_tag("/images/question.svg", :alt => "quiz") %>
+        </div>
+        <div class="quiz-card__info">
+          <span class="quiz-card__title"><%= link_to quiz.name.upcase, quiz_path(quiz.id) %></span></br>
+          <span class="quiz-card__cat">Category: <%= quiz.category.name %></span>
+          <p class="quiz-card__desc"><%= quiz.description%></p>
+        </div>
+      </ul>
+    <% end %>
 
-<br>
+
+  </div>
 </div>

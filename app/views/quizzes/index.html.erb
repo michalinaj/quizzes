@@ -9,10 +9,10 @@
     <% end %>
   </div>
 
-  <h3 class="subtitle">Find and create your own flashcards</h3><br />
-  <div class="right-side"><span class="button"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span></div>
-
-    <div class="quiz-mapping">
+  <div class="subtitle"><h3>Find and create your own flashcards</h3></div><br />
+  
+  <div class="buttons"><span class="button button-left"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span></div>
+  <div class="quiz-mapping">
 
     <% @quizzes.each do |quiz| %>
       <ul class="quiz-card">
@@ -21,7 +21,7 @@
           <%= image_tag("/images/question.svg", :alt => "quiz") %>
         </div>
         <div class="quiz-card__info">
-          <p class="quiz-card__title"><%= link_to quiz.name.upcase, quiz_path(quiz.id) %></p>
+          <span class="quiz-card__title"><%= link_to quiz.name.upcase, quiz_path(quiz.id) %></span></br>
           <span class="quiz-card__cat">Category: <%= quiz.category.name %></span>
           <p class="quiz-card__desc"><%= quiz.description%></p>
         </div>
@@ -29,7 +29,7 @@
     <% end %>
 
     </div></br>
-    <span class="button"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span>
+    <div class="buttons"><span class="button button-left"><%= link_to "ADD NEW QUIZ", new_quiz_path %></span></div>
     <div class="pagination">
       <%= will_paginate @quizzes %>
     </div>

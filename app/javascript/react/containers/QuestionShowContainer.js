@@ -72,7 +72,8 @@ class QuestionShowContainer extends Component {
 
       return(
         <div className="question__show-tile">
-          <span className="intro">{intro}</span>
+          <span className="intro">Did you know?</span>
+          <p className="sub-intro">{intro}</p>
           <QuestionShowTile
             question = {this.state.currentQuestion}
             answers = {this.state.currentAnswer}
