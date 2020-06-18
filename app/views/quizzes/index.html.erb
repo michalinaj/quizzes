@@ -16,10 +16,11 @@
 
     <% @quizzes.each do |quiz| %>
       <ul class="quiz-card">
-
-        <div class="quiz-image__index">
-          <%= image_tag("/images/question.svg", :alt => "quiz") %>
-        </div>
+        <%= link_to quiz_path(quiz.id) do %>
+          <div class="quiz-image__index">
+            <%= image_tag("/images/question.svg", :alt => "quiz") %>
+          </div>
+        <% end %>
         <div class="quiz-card__info">
           <span class="quiz-card__title"><%= link_to quiz.name.upcase, quiz_path(quiz.id) %></span></br>
           <span class="quiz-card__cat">Category: <%= quiz.category.name %></span>
