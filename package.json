@@ -2,7 +2,7 @@
   "name": "quizzes",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "5.4",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -23,10 +23,10 @@
     "karma-phantomjs-launcher": "~1.0.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-spec-reporter": "0.0.26",
-    "karma-webpack": "2.0.1",
+    "karma-webpack": "5.0.0",
     "phantomjs-prebuilt": "~2.1.14",
     "react-addons-test-utils": "~15.6.2",
-    "webpack-cli": "^2.0.10",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "2.11.2"
   },
   "scripts": {
